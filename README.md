@@ -158,7 +158,7 @@ Anotações escolares. Sophia E. S. IA25 (2)
         this.lado3 = pLado3;
       }
     
-      tipo(): string {
+      get tipo(): string {
         if (this.lado1 === this.lado2 && this.lado2 === this.lado3) {
           return "equilátero";
         }
@@ -170,13 +170,12 @@ Anotações escolares. Sophia E. S. IA25 (2)
         return "escaleno";
       }
     
-    
-      calcularPerimetro(): number {
+      get perimetro(): number {
         return (this.lado1 + this.lado2 + this.lado3) / 2;
       }
     
       get area(): number {
-        const p = this.calcularPerimetro();
+        const p = this.perimetro;
         const a = this.lado1;
         const b = this.lado2;
         const c = this.lado3;
@@ -185,12 +184,44 @@ Anotações escolares. Sophia E. S. IA25 (2)
       }
     }
     
-    
     const equilatero = new Triangulo(10, 10, 10);
     const isosceles = new Triangulo(10, 10, 5);
     const escaleno = new Triangulo(10, 5, 3);
     
-    console.log(equilatero.tipo(), equilatero.area);
+    console.log(equilatero.tipo, equilatero.area);
 
+# To-do List
+  Nn consegui atualizar (internet n funciona)
+  
+    export {}
+
+    // ----------------------------------------------------------------------------
     
+    class Item {
+      title: string = "undefined";
+      done: boolean = false;
+      constructor(title: string) {
+        this.title = title;
+      }
+    }
     
+    class List {
+      items: Array<Item> = [];
+    
+      constructor(filePath: string) {}
+      
+      // add(item: Item): void {}
+      // remove(item: Item): void {}
+      // findOneByTitle(title: string): Item | null {}
+      // findManyByTitle(title: string): Item[] {}
+      // listAll(): Item[] {}
+      // saveToFile(filePath: string): void {}
+    
+      private loadFromFile(filePath: string): void {
+        const file = Bun.file(filePath);
+    
+      }
+    }
+
+
+
