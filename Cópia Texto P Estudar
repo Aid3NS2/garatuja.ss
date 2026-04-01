@@ -308,3 +308,54 @@ quadradoInconsistente.lado1 = 10;
 Mas isso leva a outra situação adversa, pois existem caso que se faz necessário acessar ou modificar os atributos privados, por isso existem os métodos de acesso (getters e setters) que permitem controlar o acesso aos atributos privados, garantindo que as modificações sejam feitas de forma controlada e consistente.
 
 ... [isso é tema para a próxima aula] ... see you space cowboy!
+
+
+Extra:
+
+class Quadrado {
+    lado: number;
+
+    constructor(lado: number) {
+        this.lado = lado;
+    }
+
+    area(): number {
+        return this.lado * this.lado;
+    }
+
+    perimetro(): number {
+        return 4 * this.lado;
+    }
+
+    setLado(lado: number): void {
+        this.lado = lado;
+    }
+
+    getLado(): number {
+        return this.lado;
+    }
+
+    toString(): string {
+        return `Quadrado de lado ${this.lado}`;
+    }
+
+    equals(outro: Quadrado): boolean {
+        return this.lado === outro.lado;
+    }
+
+    clone(): Quadrado {
+        return new Quadrado(this.lado);
+    }
+
+    static criarQuadrado(lado: number): Quadrado {
+        return new Quadrado(lado);
+    }
+
+    static comparar(quadrado1: Quadrado, quadrado2: Quadrado): boolean {
+        return quadrado1.lado === quadrado2.lado;
+    }
+
+    static calcularArea(lado: number): number {
+        return lado * lado;
+    }
+}
