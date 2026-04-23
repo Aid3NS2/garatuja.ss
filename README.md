@@ -224,4 +224,7 @@ Anotações escolares. Sophia E. S. IA25 (2)
     }
 
 
-
+ # Perguntas
+  -> Não tenho mas tenho q fingir q tenho
+    Static (mais info sobre; foi falado por pouco tempo)
+    Throw (nao entendi o motivo que seria usado)
